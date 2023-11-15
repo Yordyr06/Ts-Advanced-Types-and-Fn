@@ -10,7 +10,16 @@ function parseStr(input: string | string[]): string | string[] {
 }
 
 const rtaArray = parseStr('Nico');
+// rtaArray.reverse();
+if (Array.isArray(rtaArray)) {
+  rtaArray.reverse();
+}
+
 const rtaStr = parseStr(['N','i','c','o']);
+// rtaStr.toLowerCase();
+if (typeof rtaStr === "string") {
+  rtaStr.toLowerCase();
+}
 
 console.log('rtaArray', 'Nico =>' ,rtaArray);
 console.log('rtaStr', "['N','i','c','o'] =>",rtaStr);
