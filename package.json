@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.3.1",
     "tailwindcss": "^3.3.5",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.2",
