@@ -1,7 +1,11 @@
 import { Product } from "./product.model";
 
-export interface CreateProduct extends Omit<Product, 'id' | 'createdAt' | 'updatedAt' | 'category'> {
+export interface CreateProductDto extends Omit<Product, 'id' | 'createdAt' | 'updatedAt' | 'category'> {
   categoryId: string;
 }
 
-type example = Pick<Product, 'color' | 'description'>
+export interface UpdateProductDto extends Partial<CreateProductDto> {}
+
+type example_1 = Pick<Product, 'color' | 'description'>
+
+type example_2 = Required<Product>;

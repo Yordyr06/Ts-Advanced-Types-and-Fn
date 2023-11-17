@@ -1,10 +1,10 @@
 import { faker } from "@faker-js/faker";
 import { Product } from "./product.model"
-import { CreateProduct } from "./product.dto";
+import { CreateProductDto, UpdateProductDto } from "./product.dto";
 
 export const products: Product[] = [];
 
-export const addProduct = (data: CreateProduct): Product => {
+export const addProduct = (data: CreateProductDto): Product => {
   const newProduct = {
     ...data,
     id: faker.string.uuid(),
@@ -21,6 +21,13 @@ export const addProduct = (data: CreateProduct): Product => {
   return newProduct;
 }
 
-export const updateProduct = (id: string, changes: Product) => {
-  // 
+export const updateProduct = (id: string, changes: UpdateProductDto): Product => {
+  const index = products.findIndex(item => item.id === id);
+  const prevData = products[index];
+  products[index] = {
+    ...prevData,
+    ...changes
+  };
+
+  return products[index]; 
 }
